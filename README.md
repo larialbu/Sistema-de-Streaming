@@ -4,7 +4,7 @@ Uma plataforma completa de streaming de música com frontend em Next.js e backen
 
 ## 🚀 Estrutura do Projeto
 
-\`\`\`
+```Markdown
 music-streaming-platform/
 ├── frontend/          # Next.js frontend
 │   ├── app/          # App Router pages
@@ -16,7 +16,7 @@ music-streaming-platform/
 │   │   ├── middleware/ # Express middleware
 │   │   └── types/    # TypeScript types
 └── package.json      # Root package.json
-\`\`\`
+```
 
 ## 🛠️ Instalação
 
@@ -28,15 +28,16 @@ music-streaming-platform/
 ### Configuração
 
 1. **Clone o repositório e instale as dependências No front:**
-\`\`\`bash
+```Markdown
 cd frontend
 npm install
-\`\`\`
+```
+
 1. **Clone o repositório e instale as dependências No front:**
-\`\`\`bash
+```Markdown
 cd backend
 npm install
-\`\`\`
+```
 
 2. **Configure o Supabase:**
    - Crie um projeto no [Supabase](https://supabase.com)
@@ -50,12 +51,16 @@ ACESSAR A DOCUMENTAÇÃO ENVIADA PARA ACESSAR AS .ENVS
 
 ### Executar separadamente
 # Frontend (porta 3000)
-1. cd frontend
-2. npm run dev
+```Markdown
+cd frontend
+npm run dev
+```
 
 # Backend (porta 3001)
-1. cd backend
-2. npm run dev
+```Markdown
+cd backend
+npm run dev
+```
 
 
 ## 📚 API Endpoints
@@ -98,9 +103,9 @@ ACESSAR A DOCUMENTAÇÃO ENVIADA PARA ACESSAR AS .ENVS
 
 ## EXTRA API TAYLOR SWIFT
 - Integração com api da taylor swift
-\`\`\`bash
+```Markdown
 https://bump.sh/sarbor/doc/taylor-swift-api/operation/operation-get-songs-parameter
-\`\`\`
+```
 
 ## Banco de dados
 **Diagrama de Classes:**
@@ -179,8 +184,6 @@ erDiagram
 ```
 
 ## 📱 Funcionalidades
-
-- ✅ Autenticação completa (registro/login/logout)
 - ✅ Listagem e busca de faixas
 - ✅ Criação e gerenciamento de playlists
 - ✅ Adição/remoção de faixas em playlists
@@ -192,14 +195,15 @@ erDiagram
 ## 🚀 Deploy
 
 ### Frontend (sugestão: Vercel)
-\`\`\`bash
+```Markdown
 cd frontend
 npm run build
-\`\`\`
+```
 
 ### Backend (sugestão: Railway/Heroku)
-\`\`\`bash
+```Markdown
 cd backend
 npm run build
 npm start
+```
 
