@@ -44,39 +44,19 @@ npm install
    - Configure as variáveis de ambiente
 
 3. **Configure as variáveis de ambiente:**
-
-**Frontend (.env):**
-\`\`\`env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-\`\`\`
-
-**Backend (.env):**
-\`\`\`env
-NODE_ENV=development
-PORT=3001
-FRONTEND_URL=http://localhost:3000
-SUPABASE_URL=your_supabase_url
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-\`\`\`
+ACESSAR A DOCUMENTAÇÃO ENVIADA PARA ACESSAR AS .ENVS
 
 ## 🚀 Executando o Projeto
 
-### Desenvolvimento (ambos simultaneamente)
-\`\`\`bash
-npm run dev
-\`\`\`
-
 ### Executar separadamente
-\`\`\`bash
 # Frontend (porta 3000)
-cd frontend
-npm run dev
+1. cd frontend
+2. npm run dev
 
 # Backend (porta 3001)
-cd backend
-npm run dev
-\`\`\`
+1. cd backend
+2. npm run dev
+
 
 ## 📚 API Endpoints
 
