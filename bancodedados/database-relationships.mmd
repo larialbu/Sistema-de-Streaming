@@ -1,0 +1,29 @@
+%% Relacionamentos do Banco de Dados - Sistema de Streaming
+
+erDiagram
+    PLAYLISTS {
+        uuid id PK "Identificador único da playlist"
+        string name "Nome da playlist"
+        uuid user_id FK "ID do usuário proprietário"
+        timestamp created_at "Data de criação"
+        timestamp updated_at "Data da última atualização"
+    }
+
+    TRACKS {
+        uuid id PK "Identificador único da faixa"
+        string title "Título da música"
+        string artist "Nome do artista"
+        int duration "Duração em segundos"
+        string album_cover "URL da capa do álbum"
+        timestamp created_at "Data de criação"
+    }
+
+    PLAYLIST_TRACKS {
+        uuid id PK "Identificador único do relacionamento"
+        uuid playlist_id FK "Referência à playlist"
+        uuid track_id FK "Referência à faixa"
+        timestamp added_at "Data que a faixa foi adicionada"
+    }
+
+    PLAYLISTS ||--o{ PLAYLIST_TRACKS : "Uma playlist pode ter muitas faixas"
+    TRACKS ||--o{ PLAYLIST_TRACKS : "Uma faixa pode estar em muitas playlists"

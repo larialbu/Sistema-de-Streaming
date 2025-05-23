@@ -1,0 +1,30 @@
+%% Operações da API para as 3 Tabelas
+
+flowchart TD
+    A[Cliente] --> B{Operação}
+    
+    B -->|GET /tracks| C[Listar Faixas]
+    B -->|GET /tracks/:id| D[Buscar Faixa]
+    B -->|POST /tracks| E[Criar Faixa]
+    
+    B -->|GET /playlists| F[Listar Playlists]
+    B -->|POST /playlists| G[Criar Playlist]
+    B -->|DELETE /playlists/:id| H[Deletar Playlist]
+    
+    B -->|POST /playlists/:id/tracks| I[Adicionar Faixa à Playlist]
+    B -->|DELETE /playlists/:id/tracks/:trackId| J[Remover Faixa da Playlist]
+    
+    C --> K[(TRACKS)]
+    D --> K
+    E --> K
+    
+    F --> L[(PLAYLISTS)]
+    G --> L
+    H --> L
+    
+    I --> M[(PLAYLIST_TRACKS)]
+    J --> M
+    
+    F --> N[JOIN com PLAYLIST_TRACKS]
+    N --> O[JOIN com TRACKS]
+    O --> P[Retorna Playlists com Faixas]

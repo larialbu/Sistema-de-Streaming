@@ -1,0 +1,67 @@
+%% Diagrama ER para o Sistema de Streaming de Música - 3 Tabelas Principais
+
+erDiagram
+    PLAYLISTS ||--o{ PLAYLIST_TRACKS : "contém"
+    TRACKS ||--o{ PLAYLIST_TRACKS : "está em"
+
+    PLAYLISTS {
+        uuid id PK
+        string name
+        uuid user_id FK
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    TRACKS {
+        uuid id PK
+        string title
+        string artist
+        int duration
+        string album_cover
+        timestamp created_at
+    }
+
+    PLAYLIST_TRACKS {
+        uuid id PK
+        uuid playlist_id FK
+        uuid track_id FK
+        timestamp added_at
+    }
+
+%% Diagrama de Classes UML
+
+classDiagram
+    class Playlist {
+        +UUID id
+        +String name
+        +UUID user_id
+        +DateTime created_at
+        +DateTime updated_at
+        +addTrack(track_id): void
+        +removeTrack(track_id): void
+        +getTracks(): Track[]
+        +getTrackCount(): int
+    }
+
+    class Track {
+        +UUID id
+        +String title
+        +String artist
+        +Integer duration
+        +String album_cover
+        +DateTime created_at
+        +getFormattedDuration(): String
+        +getArtistAndTitle(): String
+    }
+
+    class PlaylistTrack {
+        +UUID id
+        +UUID playlist_id
+        +UUID track_id
+        +DateTime added_at
+        +getPlaylist(): Playlist
+        +getTrack(): Track
+    }
+
+    Playlist "1" -- "*" PlaylistTrack : contains
+    Track "1" -- "*" PlaylistTrack : belongs to
